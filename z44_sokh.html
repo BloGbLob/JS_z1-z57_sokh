@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyświetlanie imienia i nazwiska</title>
+    <style>
+        .wyświetlacz {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wyświetlanie imienia i nazwiska</h1>
+    
+    <div id="wynik"></div>
+    
+    <script>
+       
+        var imie_sok = "Nazarii";
+        var nazwisko_sok = "Sokhatskyi";
+        
+        
+        var liczba_liter_sok = nazwisko_sok.length; 
+        var ile_razy_wyswietlic_sok = (liczba_liter_sok % 4) + 10; 
+        var wielkosc_liter_sok = (liczba_liter_sok % 3) + 40 + "px"; 
+        
+        
+        document.getElementById("wynik").innerHTML += 
+            `<p class="wyświetlacz">Ilość wykonania pętli = ${ile_razy_wyswietlic_sok}</p>` +
+            `<p class="wyświetlacz">Wielkość liter = ${wielkosc_liter_sok}</p><hr>`;
+        
+        
+        for(var i_sok = 1; i_sok <= ile_razy_wyswietlic_sok; i_sok++) {
+            if(i_sok % 2 === 1) { 
+                document.getElementById("wynik").innerHTML += 
+                    `<p style="font-size: ${wielkosc_liter_sok}">${i_sok}. ${nazwisko_sok}</p>`;
+            } else { 
+                document.getElementById("wynik").innerHTML += 
+                    `<p style="font-size: ${wielkosc_liter_sok}">${i_sok}. ${imie_sok}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

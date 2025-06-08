@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 52 - Prostokąt z gwiazdek</title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            line-height: 1;
+        }
+        h1 {
+            color: #004f63;
+        }
+        #prostokat {
+            white-space: pre;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zadanie 52 - Prostokąt z gwiazdek</h1>
+    <p>Imię: Nazarii (7 liter), Nazwisko: Sokhatskyi (10 liter)</p>
+    
+    <div id="prostokat"></div>
+    
+    <script>
+       
+        var imie = "Nazarii";    // 7 liter
+        var nazwisko = "Sokhatskyi"; // 10 liter
+        
+        
+        var a_naz = (nazwisko.length % 4) + 5;  // 10%4=2 → 2+5=7
+        var b_naz = (imie.length % 6) + 20;     // 7%6=1 → 1+20=21
+        
+        
+        var wynik = "";
+        
+       
+        for (var i_naz = 0; i_naz < b_naz; i_naz++) {
+            wynik += "*";
+        }
+        wynik += "\n";
+        
+       
+        for (var j_naz = 0; j_naz < a_naz - 2; j_naz++) {
+            wynik += "*";
+            for (var k_naz = 0; k_naz < b_naz - 2; k_naz++) {
+                wynik += " ";
+            }
+            wynik += "*\n";
+        }
+        
+        
+        for (var l_naz = 0; l_naz < b_naz; l_naz++) {
+            wynik += "*";
+        }
+        
+        
+        document.getElementById("prostokat").textContent = wynik;
+    </script>
+    
+    <p>Wymiary prostokąta: a_naz = ${a_naz}, b_naz = ${b_naz}</p>
+    <script>
+        document.write(`<p>Wymiary prostokąta: a_naz = ${a_naz}, b_naz = ${b_naz}</p>`);
+    </script>
+</body>
+</html>
